@@ -24,6 +24,11 @@ arch_install() {
     if[[ "$current_desktop" != "" ]]
     then
 	sudo pamac build spotify
+	sudo pacman -S discord
+	git clone --recurse-submodules https://github.com/flightlessmango/MangoHud.git
+	~/MangoHud/build.sh build
+	~/MangoHud/build.sh package
+	~/MangoHud/build.sh install
     fi
     
     # clone down github repos
@@ -39,9 +44,12 @@ arch_install() {
     cargo +nightly install racer
 
     # golang install
-    # printf "export GOROOT=/usr/local/go\nexport GOPATH=~/Documents/Golang\nexport PATH=$GOPATH/bin:$GOROOT/bin:$PATH" >> ~/.bash_profile
-    #
-    #
+    wget https://dl.google.com/go/go1.14.1.linux-amd64.tar.gz
+    tar xvzf go1.14.1.linux-amd64.tar.gz -C ~/usr/local/
+    printf "export GOROOT=/usr/local/go\nexport GOPATH=~/Documents/Golang\nexport PATH=\$GOPATH/bin:\$GOROOT/bin:\$PATH" >> ~/.bash_profile
+    source ~/.bash_profile
+    go get -u github.com/mdempsky/gocode
+    go get golang.org/x/tools/cmd/goimports
 
     # terminal applications
     sudo pacman -S mc
