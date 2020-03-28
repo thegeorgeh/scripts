@@ -21,9 +21,9 @@ arch_install() {
     current_desktop=$(env | grep -i xdg_current_desktop)
 
     # gui applications
-    if[[ "$current_desktop" != "" ]]
+    if [[ "$current_desktop" != "" ]];
     then
-	sudo pamac build spotify
+	pamac build spotify
 	sudo pacman -S discord
 	git clone --recurse-submodules https://github.com/flightlessmango/MangoHud.git
 	~/MangoHud/build.sh build
@@ -58,9 +58,9 @@ arch_install() {
     
 }
 
-deb_cent_install() {
+#deb_cent_install() {
 
     #sudo apt install build-essential
-}
+#}
 
 	

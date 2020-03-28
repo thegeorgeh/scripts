@@ -1,0 +1,4 @@
+
+choco install 7zip.install
+choco install vscode
+choco install powertoys
