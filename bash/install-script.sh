@@ -3,17 +3,6 @@
 os=$(cat /etc/os-release | grep -i ID_LIKE)
 pManager=""
 
-case $os in
-    *"arch"*)
-       arch_install;;
-    *"debian"*)
-	pManager="apt"
-	deb_cent_install;;
-    *"rhel fedora"*)
-	pManager="yum"
-	deb_cent_install;;
-esac
-
 arch_install() {
 
     sudo pacman -Syyu
@@ -62,5 +51,14 @@ arch_install() {
 
     #sudo apt install build-essential
 #}
-
 	
+case $os in
+    *"arch"*)
+       arch_install;;
+    *"debian"*)
+	pManager="apt"
+	deb_cent_install;;
+    *"rhel fedora"*)
+	pManager="yum"
+	deb_cent_install;;
+esac
