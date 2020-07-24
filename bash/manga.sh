@@ -2,7 +2,7 @@
 #!/bin/bash
 
 mangasite=("https://mangakakalot.com/" "https://m.fanfox.net/")
-manga=("6 Worlds of Cultivation" "I am the Sorcerer King" "Jishou! Heibon Mazoku no Eiyuu Life: B-Kyuu Mazoku Nano ni Cheat Dungeon wo Tsukutteshimatta Kekka" "Maougakuin no Futekigousha" "Martial Peak" "Mastery of Legendary Realms" "Onepunch-Man" "Release That Witch" "Shinka no Mi" "Solo Leveling" "Tensei Ouji wa Daraketai" "Black Clover")
+manga=("6 Worlds of Cultivation" "Black Clover" "I am the Sorcerer King" "Jishou! Heibon Mazoku no Eiyuu Life: B-Kyuu Mazoku Nano ni Cheat Dungeon wo Tsukutteshimatta Kekka" "Isekai Monster Breeder" "Maougakuin no Futekigousha" "Martial Peak" "Mastery of Legendary Realms" "Onepunch-Man" "Release That Witch" "Rules for Peddling in Another World" "Shinka no Mi" "Solo Leveling" )
 
 msLen=${#mangasite[@]}
 mLen=${#manga[@]}
