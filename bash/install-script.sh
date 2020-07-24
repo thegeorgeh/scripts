@@ -52,7 +52,7 @@ arch_install() {
     sudo pacman -S emacs
     pamac build powershell
     
-    personal_linux_install()
+    personal_linux_install
 
     source ~/.bash_profile
 }
@@ -74,7 +74,7 @@ deb_install() {
     sudo apt-get install w3m && sudo apt-get install w3m-img
     sudo apt-get install powershell
 
-    personal_linux_install()
+    personal_linux_install
 
     source ~/.profile
 }
@@ -107,5 +107,5 @@ esac
     git clone https://github.com/thegeorgeh/custom_emacs.git
     cp ~/custom_emacs/.emacs ~/
 
-    emacs --funcall package-install-selected-packages -nw
+    # emacs --funcall package-install-selected-packages -nw
 
