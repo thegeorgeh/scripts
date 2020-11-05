@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 
 rm ~/.local/share/calcurse/apts ~/.local/share/calcurse/calendar.ics
 wget https://outlook.live.com/owa/calendar/00000000-0000-0000-0000-000000000000/cc074791-7026-421e-acbd-1aa8a3926886/cid-C98ADDBC195CCACF/calendar.ics -P ~/.local/share/calcurse/ 
