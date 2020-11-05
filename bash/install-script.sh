@@ -13,22 +13,21 @@ personal_linux_install() {
     fi
 
     # clone down github repos
-    git clone https://github.com/thegeorgeh/scripts.git ~/Documents/scripts
-    git clone https://github.com/thegeorgeh/rust.git ~/Documents/rust
+    # git clone https://github.com/thegeorgeh/rust.git ~/Documents/rust
     
     # rust install
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --default-toolchain nightly -y
-    source ~/.bash_profile
-    # rustup toolchain add nightly
-    cargo +nightly install racer
+    # curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --default-toolchain nightly -y
+    # source ~/.bash_profile
+    # # rustup toolchain add nightly
+    # cargo +nightly install racer
 
     # golang install
-    wget https://dl.google.com/go/go1.14.1.linux-amd64.tar.gz
-    tar xvzf go1.14.1.linux-amd64.tar.gz -C ~/usr/local/
-    printf "export GOROOT=/usr/local/go\nexport GOPATH=~/Documents/Golang\nexport PATH=\$GOPATH/bin:\$GOROOT/bin:\$PATH" >> ~/.bash_profile
-    source ~/.bash_profile
-    go get -u github.com/mdempsky/gocode
-    go get golang.org/x/tools/cmd/goimports
+    # wget https://dl.google.com/go/go1.14.1.linux-amd64.tar.gz
+    # tar xvzf go1.14.1.linux-amd64.tar.gz -C ~/usr/local/
+    # printf "export GOROOT=/usr/local/go\nexport GOPATH=~/Documents/Golang\nexport PATH=\$GOPATH/bin:\$GOROOT/bin:\$PATH" >> ~/.bash_profile
+    # source ~/.bash_profile
+    # go get -u github.com/mdempsky/gocode
+    # go get golang.org/x/tools/cmd/goimports
 
 }
 
@@ -42,11 +41,15 @@ arch_install() {
     # gui applications
     if [[ "$current_desktop" != "" ]];
     then
-	pamac build spotify
+	#pamac build spotify
 	sudo pacman -S discord
     fi
 	
     # terminal applications
+    sudo pacman -Syu cronie
+    systemctl enable --now cronie.service
+    sudo pacman -S tlp
+    sudo pacman -S remmina
     sudo pacman -S mc
     sudo pacman -S w3m && sudo pacman -S w3m-img
     sudo pacman -S emacs
